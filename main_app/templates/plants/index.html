@@ -5,6 +5,7 @@
 
 {% for plant in plants %}
   <div class="card">
+    <a href="{% url 'detail' plant.id %}">
     <div class="card-content">
       <span class="card-title">{{ plant.name }}</span>
       <p>Name: {{ plant.name }}</p>
@@ -15,6 +16,7 @@
         <p>Age: Seedling</p>
       {% endif %}
     </div>
+    </a>
   </div>
 {% endfor %}
 
