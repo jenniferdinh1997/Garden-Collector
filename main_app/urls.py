@@ -9,4 +9,5 @@ urlpatterns = [ #defines a root path using an empty string and maps it to the vi
     path('plants/create/', views.PlantCreate.as_view(), name='plants_create'),
     path('plants/<int:pk>/update/', views.PlantUpdate.as_view(), name='plants_update'),
     path('plants/<int:pk>/delete/', views.PlantDelete.as_view(), name='plants_delete'),
+    path('plants/<int:plant_id>/add_water/', views.add_water, name='add_water'),
 ]

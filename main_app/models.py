@@ -21,7 +21,7 @@ WATER = (
 )
 
 class Water(models.Model):
-    date = models.DateField()
+    date = models.DateField('water date')
     water = models.CharField(
         max_length = 1,
         choices = WATER,
@@ -32,3 +32,6 @@ class Water(models.Model):
 
     def __str__(self):
         return f"{self.get_water_display()} on {self.date}"
+
+    class Meta:
+        order = ['-date']
