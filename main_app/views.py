@@ -1,13 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Plant
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 class PlantCreate(CreateView):
     model = Plant
     fields = '__all__'
-    
+    success_url = '/plants/'
+
+class PlantUpdate(UpdateView):
+    model = Plant
+    fields = ['species', 'description', 'age']
+
+class PlantDelete(DeleteView):
+    model = Plant
+    success_url = '/plants/'
+
 def home(request):
     return HttpResponse('<h1>Hello World')
 
