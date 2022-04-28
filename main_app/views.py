@@ -8,7 +8,7 @@ from .forms import WaterForm
 # Create your views here.
 class PlantCreate(CreateView):
     model = Plant
-    fields = '__all__'
+    fields = ['name', 'species', 'description', 'age']
     success_url = '/plants/'
 
 class PlantUpdate(UpdateView):
